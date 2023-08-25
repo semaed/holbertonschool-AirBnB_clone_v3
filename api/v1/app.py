@@ -9,12 +9,15 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 
+
 app = Flask(__name__)
 
 app.register_blueprint(app_views)
 
+
 # Create a CORS instance with permissive settings (for demonstration purposes)
 cors = CORS(app, resources={r"/api/*": {"origins": "0.0.0.0"}})
+
 
 
 @app.teardown_appcontext
